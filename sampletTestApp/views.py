@@ -7,7 +7,7 @@ from django.db import connection
 import os
 os.environ["GOOGLE_API_USE_MTLS_ENDPOINT"] = "never"
 
-genai.configure(api_key="AIzaSyCtQbzadmkvCgrENptYevzdVk5ARLgnTDc")
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 model = genai.GenerativeModel('gemini-2.5-flash')
 def get_current_schema():
