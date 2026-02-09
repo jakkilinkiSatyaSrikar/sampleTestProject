@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: solo-king-sql
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn your_project_name.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
